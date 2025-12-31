@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Nine web page</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+    :root { --gap: 1rem; }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 1rem; }
+    .container { display:flex; flex-direction:column; gap:var(--gap); }
+    .box { padding: 1rem; border:1px solid #ddd; border-radius: 6px; }
+
+    .grid { display:flex; flex-direction:column; gap:var(--gap); }
+  
+    @media (min-width: 640px) {
+      .grid { flex-direction:row; }
+      .grid .box { flex:1; }
+    }
+  
+    @media (min-width: 1024px) {
+      .grid { flex-wrap:wrap; }
+      .grid .box { width: 32%; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Responsive Demo (mobile-first)</h1>
+  <div class="container">
+    <div class="grid">
+      <div class="box">Column 1</div>
+      <div class="box">Column 2</div>
+      <div class="box">Column 3</div>
+    </div>
+    <p>Resize the browser to see columns change from 1 → 2 → 3 using media queries and flexible units.</p>
+  </div>
+</body>
+</html>
